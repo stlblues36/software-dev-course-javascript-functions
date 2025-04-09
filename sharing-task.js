@@ -89,3 +89,37 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Explain how your team approached the design and testing process
 
 // ✅ Bonus: Can you extend any of the functions to be more flexible or reusable?
+
+// Task 1: Function to generate an attendee badge
+function generateAttendeeBadge(name, role) {
+    return `Name: ${name}, Role: ${role.charAt(0).toUpperCase() + role.slice(1)}`;
+}
+
+// Task 2: Function to calculate the total cost of the event
+function calculateCost(numAttendees, costPerAttendee) {
+    let totalCost = numAttendees * costPerAttendee;
+    // Apply 10% discount if attendees exceed 100
+    if (numAttendees > 100) {
+        totalCost = totalCost * 0.9;  // Apply 10% discount
+    }
+    return totalCost;
+}
+
+// Task 3: Function to validate an email address
+function validateEmail(email) {
+    // Check if email contains "@" and "."
+    return email.includes("@") && email.includes(".");
+}
+// Test cases for Task 1: Generating an Attendee Badge
+console.log(generateAttendeeBadge("Alice", "speaker"));  // Expected output: "Name: Alice, Role: Speaker"
+console.log(generateAttendeeBadge("Bob", "attendee"));   // Expected output: "Name: Bob, Role: Attendee"
+
+// Test cases for Task 2: Calculating the Total Cost
+console.log(calculateCost(120, 25));  // Expected output: 2700 (after 10% discount)
+console.log(calculateCost(90, 25));   // Expected output: 2250 (no discount, 90 attendees)
+
+// Test cases for Task 3: Validating Email Address
+console.log(validateEmail("alice@example.com"));  // Expected output: true
+console.log(validateEmail("bobexample.com"));    // Expected output: false
+console.log(validateEmail("charlie@domain"));    // Expected output: false
+console.log(validateEmail("david@domain.co"));   // Expected output: true    
