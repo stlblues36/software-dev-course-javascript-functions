@@ -33,25 +33,7 @@ This activity reinforces:
 // ============================================
 
 // Script 1 - Greeting multiple users
-console.log("Welcome, Alice!");
-console.log("Welcome, Bob!");
-console.log("Welcome, Charlie!");
 
-// Script 2 - Sum calculation
-let num1 = 5, num2 = 10;
-let sum = num1 + num2;
-console.log("The sum of 5 and 10 is " + sum);
-
-// Script 3 - Product calculation
-let product = num1 * num2;
-console.log("The product of 5 and 10 is " + product);
-
-// Script 4 - Print names from a list
-let names = ["Alice", "Bob", "Charlie"];
-console.log("Names in the list:");
-for (let i = 0; i < names.length; i++) {
-    console.log(names[i]);
-}
 
 /*
 ===========================================
@@ -72,3 +54,43 @@ for (let i = 0; i < names.length; i++) {
 */
 
 // ✅ Your refactored code goes below this line!
+// Function to greet a user
+function greetUser(name) {
+   console.log("Welcome, " + name + "!");
+}
+
+// Function to calculate the sum of two numbers
+function calculateSum(num1, num2) {
+   return num1 + num2; // return the sum of num1 and num2
+}
+
+// Function to calculate the product of two numbers
+function calculateProduct(num1, num2) { 
+   return num1 * num2; // return the product of num1 and num2
+}
+
+// Function to print names in an array
+function printNames(namesArray) {
+   console.log("Names in the list:");
+   for (let i = 0; i < namesArray.length; i++) {
+       console.log(namesArray[i]); // print each name in the array
+   }
+}
+
+// Script 1 - Greeting multiple users (using the function)
+greetUser("Alice");
+greetUser("Bob");
+greetUser("Charlie");
+
+// Script 2 - Sum calculation (using the function)
+let num1 = 5, num2 = 10;
+let sum = calculateSum(num1, num2); // using the calculateSum function
+console.log("The sum of " + num1 + " and " + num2 + " is " + sum);
+
+// Script 3 - Product calculation (using the function)
+let product = calculateProduct(num1, num2); // using the calculateProduct function
+console.log("The product of " + num1 + " and " + num2 + " is " + product);
+
+// Script 4 - Print names from a list (using the function)
+let names = ["Alice", "Bob", "Charlie"];
+printNames(names); // using the printNames function
